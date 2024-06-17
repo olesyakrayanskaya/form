@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./form.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="#" method="post" class="form">
+        <fieldset class="form__set">
+          <legend class="form__title">Form title</legend>
+          <div class="form__contacts">
+            <label class="form__label" for="org">
+              <input
+                class="form__input"
+                type="text"
+                name="org"
+                id="org"
+                placeholder="organization"
+                required
+              />
+              <span class="form__placeholder">organization name</span>
+            </label>
+            <label class="form__label" for="tel">
+              <input
+                class="form__input"
+                type="tel"
+                name="tel"
+                id="tel"
+                required
+                placeholder="+7 933 848-34-33"
+                pattern="^(\+7|8)((\s|-)?[0-9]){10}$"
+              />
+              <span class="form__placeholder">Phone number</span>
+            </label>
+            <label class="form__label" for="email">
+              <input
+                class="form__input"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="avc@gmail.com"
+                required
+              />
+              <span class="form__placeholder">E-mail</span>
+            </label>
+          </div>
+          <div class="form__logo logo">
+            <label class="form__label logo__label" for="file"> </label>
+            <span class="logo__placeholder" id="file-placeholder"
+              >Logo (jpeg, png)</span
+            >
+            <span class="logo__text"> File</span>
+            <input
+              class="form__input"
+              type="file"
+              name="file"
+              id="file"
+              accept=".png, .jpg, .jpeg"
+              required
+            />
+          </div>
+          <label class="form__label" for="direct">
+            <select class="form__input" name="direct" id="direct" required>
+              <option class="form__option" value="">Direction</option>
+              <option class="form__option" value="Direction 2">
+                Direction 2
+              </option>
+              <option class="form__option" value="Direction 3">
+                Direction 3
+              </option>
+              <option class="form__option" value="Direction 4">
+                Direction 4
+              </option>
+            </select>
+            <span class="form__placeholder">Direction</span>
+          </label>
+          <label class="form__label" for="www">
+            <input
+              class="form__input"
+              type="text"
+              name="www"
+              id="www"
+              minlength="2"
+              placeholder="avc.ru"
+            />
+          </label>
+          <label class="form__label" for="vk">
+            <input
+              class="form__input"
+              type="text"
+              name="vk"
+              id="vk"
+              pattern="^(http://|https://)?vk\.com(/.*)?"
+              placeholder="vk.com/shans"
+            />
+          </label>
+          <label class="form__label" for="ok">
+            <input
+              class="form__input"
+              type="text"
+              name="ok"
+              id="ok"
+              pattern="^(http://|https://)?ok\.com(/.*)?"
+              placeholder="ok.com/shans"
+            />
+          </label>
+          <label class="form__label" for="facebook">
+            <input
+              class="form__input"
+              type="text"
+              name="facebook"
+              id="facebook"
+              pattern="^(http://|https://)?facebook\.com(/.*)?"
+              placeholder="facebook.com/shans"
+            />
+          </label>
+          <label class="form__label" for="instagram">
+            <input
+              class="form__input"
+              type="text"
+              name="instagram"
+              id="instagram"
+              pattern="^(http://|https://)?instagram\.com(/.*)?"
+              placeholder="instagram.com/shans"
+            />
+          </label>
+          <label class="form__label" for="youtube">
+            <input
+              class="form__input"
+              type="text"
+              name="youtube"
+              id="youtube"
+              pattern="^(http://|https://)?youtube\.com(/.*)?"
+              placeholder="youtube.com/shans"
+            />
+          </label>
+          <label class="form__label" for="manager">
+            <input
+              class="form__input"
+              type="text"
+              name="manager"
+              id="manager"
+              pattern="^[a-zA-Zа-яА-ЯёЁ\s]+$"
+              placeholder="Name Lastname"
+            />
+            <span class="form__placeholder">manager</span>
+          </label>
+        </fieldset>
+        <footer class="form__footer">
+          <input
+            class="form__input"
+            type="submit"
+            name="submit"
+            id="submit"
+            value="Send"
+          />
+          <label class="form__label" for="submit"></label>
+          <input
+            class="form__input"
+            type="reset"
+            name="reset"
+            id="reset"
+            value="cansel"
+          />
+          <label class="form__label" for="reset"></label>
+        </footer>
+      </form>
+    </div>
+  </body>
+  <script src="./form.js"></script>
+</html>
