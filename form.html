@@ -14,20 +14,21 @@
   </head>
   <body>
     <div class="container">
+      <p class="error-msg"></p>
       <form action="#" method="post" class="form">
         <fieldset class="form__set">
           <legend class="form__title">Form title</legend>
           <div class="form__contacts">
-            <label class="form__label" for="org"> </label>
             <input
               class="form__input"
               type="text"
               name="org"
               id="org"
               placeholder="organization"
+              minlength="2"
               required
             />
-            <label class="form__label" for="tel"> </label>
+            <label class="form__label" for="org"></label>
             <input
               class="form__input"
               type="tel"
@@ -37,7 +38,7 @@
               placeholder="+7 933 848-34-33"
               pattern="^(\+7|8)((\s|-)?[0-9]){10}$"
             />
-            <label class="form__label" for="email"> </label>
+            <label class="form__label" for="tel"></label>
             <input
               class="form__input"
               type="email"
@@ -46,8 +47,8 @@
               placeholder="avc@gmail.com"
               required
             />
+            <label class="form__label" for="email"></label>
           </div>
-          <label class="form__label" for="direct"> </label>
           <select class="form__input" name="direct" id="direct" required>
             <option class="form__option" value="">Direction</option>
             <option class="form__option" value="Direction 2">
@@ -60,7 +61,7 @@
               Direction 4
             </option>
           </select>
-          <label class="form__label" for="www"> </label>
+          <label class="form__label" for="direct"></label>
           <input
             class="form__input"
             type="text"
@@ -69,7 +70,7 @@
             minlength="2"
             placeholder="avc.ru"
           />
-          <label class="form__label" for="vk"> </label>
+          <label class="form__label" for="www"></label>
           <input
             class="form__input"
             type="text"
@@ -78,7 +79,7 @@
             pattern="^(http://|https://)?vk\.com(/.*)?"
             placeholder="vk.com/shans"
           />
-          <label class="form__label" for="ok"> </label>
+          <label class="form__label" for="vk"></label>
           <input
             class="form__input"
             type="text"
@@ -87,7 +88,7 @@
             pattern="^(http://|https://)?ok\.com(/.*)?"
             placeholder="ok.com/shans"
           />
-          <label class="form__label" for="facebook"> </label>
+          <label class="form__label" for="ok"></label>
           <input
             class="form__input"
             type="text"
@@ -96,7 +97,7 @@
             pattern="^(http://|https://)?facebook\.com(/.*)?"
             placeholder="facebook.com/shans"
           />
-          <label class="form__label" for="instagram"> </label>
+          <label class="form__label" for="facebook"></label>
           <input
             class="form__input"
             type="text"
@@ -105,7 +106,7 @@
             pattern="^(http://|https://)?instagram\.com(/.*)?"
             placeholder="instagram.com/shans"
           />
-          <label class="form__label" for="youtube"> </label>
+          <label class="form__label" for="instagram"></label>
           <input
             class="form__input"
             type="text"
@@ -114,7 +115,7 @@
             pattern="^(http://|https://)?youtube\.com(/.*)?"
             placeholder="youtube.com/shans"
           />
-          <label class="form__label" for="manager"> </label>
+          <label class="form__label" for="youtube"></label>
           <input
             class="form__input"
             type="text"
@@ -124,16 +125,16 @@
             placeholder="Name Lastname"
             required
           />
+          <label class="form__label" for="manager"></label>
           <div class="form__file">
-            <label class="form__label" for="file"> </label>
             <input
               class="form__input"
               type="file"
               name="file"
               id="file"
               accept=".png, .jpg, .jpeg"
-              required
             />
+            <label class="form__label" for="file">photo</label>
           </div>
         </fieldset>
         <footer class="form__footer">

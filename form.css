@@ -438,14 +438,49 @@ body {
 }
 
 .form__label {
-    display: inline-block;
     position: relative;
 }
 
-.form__input[required]~.form__label::after {
+.form__input[required]+.form__label::after {
     content: '*';
     position: absolute;
-    top: 16px;
+    top: -45px;
     right: -10px;
     color: red;
+}
+
+.form__input:invalid {
+    border: 1px solid red;
+}
+
+.form__input:invalid+.form__label::before {
+    content: 'invalid value';
+    position: absolute;
+    top: -12px;
+    right: 0;
+    color: red;
+}
+
+.form__input:invalid:placeholder-shown+.form__label::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: transparent;
+}
+
+.form__input:invalid:placeholder-shown {
+    border: 1px solid rgb(118, 118, 118);
+}
+
+#direct:invalid {
+    border: 1px solid rgb(118, 118, 118);
+}
+
+#direct:invalid+.form__label::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: transparent;
 }
