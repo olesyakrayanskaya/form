@@ -411,3 +411,28 @@ body {
     font-weight: 400;
     font-style: normal;
 }
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.form__set {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    align-items: stretch;
+}
+
+.form__contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    align-items: stretch;
+}
