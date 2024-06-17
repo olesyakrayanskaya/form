@@ -436,3 +436,16 @@ body {
     gap: 16px;
     align-items: stretch;
 }
+
+.form__label {
+    display: inline-block;
+    position: relative;
+}
+
+.form__input[required]~.form__label::after {
+    content: '*';
+    position: absolute;
+    top: 16px;
+    right: -10px;
+    color: red;
+}
