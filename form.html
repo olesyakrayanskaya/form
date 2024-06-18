@@ -15,7 +15,7 @@
   <body>
     <div class="container">
       <p class="error-msg"></p>
-      <form action="#" method="post" class="form">
+      <form action="#" method="post" class="form" id="formId">
         <fieldset class="form__set">
           <legend class="form__title">Form title</legend>
           <div class="form__contacts">
@@ -26,7 +26,7 @@
               id="org"
               placeholder="organization"
               minlength="2"
-              required
+
             />
             <label class="form__label" for="org"></label>
             <input
@@ -34,7 +34,7 @@
               type="tel"
               name="tel"
               id="tel"
-              required
+
               placeholder="+7 933 848-34-33"
               pattern="^(\+7|8)((\s|-)?[0-9]){10}$"
             />
@@ -45,7 +45,7 @@
               name="email"
               id="email"
               placeholder="avc@gmail.com"
-              required
+
             />
             <label class="form__label" for="email"></label>
           </div>
@@ -123,7 +123,7 @@
             id="manager"
             pattern="^[a-zA-Zа-яА-ЯёЁ\s]+$"
             placeholder="Name Lastname"
-            required
+
           />
           <label class="form__label" for="manager"></label>
           <div class="form__file">
