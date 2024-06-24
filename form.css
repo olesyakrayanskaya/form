@@ -461,6 +461,14 @@ body {
     color: red;
 }
 
+#direct:invalid+.form__label::before {
+    content: 'select value';
+    position: absolute;
+    top: -12px;
+    right: 0;
+    color: red;
+}
+
 .form__input:invalid:placeholder-shown+.form__label::before {
     content: '';
     position: absolute;
@@ -473,14 +481,10 @@ body {
     border: 1px solid rgb(118, 118, 118);
 }
 
-#direct:invalid {
+#direct:required:invalid {
     border: 1px solid rgb(118, 118, 118);
 }
 
-#direct:invalid+.form__label::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: transparent;
+.invalid {
+    border: 1px solid red;
 }

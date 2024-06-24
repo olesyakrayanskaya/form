@@ -15,7 +15,7 @@
   <body>
     <div class="container">
       <p class="error-msg"></p>
-      <form action="#" method="post" class="form">
+      <form action="#" method="post" class="form" id="form">
         <fieldset class="form__set">
           <legend class="form__title">Form title</legend>
           <div class="form__contacts">
@@ -50,7 +50,9 @@
             <label class="form__label" for="email"></label>
           </div>
           <select class="form__input" name="direct" id="direct" required>
-            <option class="form__option" value="">Direction</option>
+            <option class="form__option" value="" disabled selected hidden>
+              Direction
+            </option>
             <option class="form__option" value="Direction 2">
               Direction 2
             </option>
@@ -142,6 +144,7 @@
               type="checkbox"
               name="checkbox"
               id="checkbox"
+              required
             />
             <label class="form__label" for="checkbox"></label>
             <p class="form__text">I agree</p>
