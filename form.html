@@ -14,8 +14,7 @@
   </head>
   <body>
     <div class="container">
-      <p class="error-msg"></p>
-      <form action="#" method="post" class="form" id="form" id="formId">
+      <form action="#" method="post" class="form" id="form" novalidate>
         <fieldset class="form__set">
           <legend class="form__title">Form title</legend>
           <div class="form__contacts">
@@ -28,6 +27,7 @@
               minlength="2"
               required
             />
+            <span class="error" aria-live="polite"></span>
             <label class="form__label" for="org"></label>
             <input
               class="form__input"
@@ -39,14 +39,17 @@
               pattern="^(\+7|8)((\s|-)?[0-9]){10}$"
             />
             <label class="form__label" for="tel"></label>
+            <span class="error" aria-live="polite"></span>
             <input
               class="form__input"
               type="email"
               name="email"
               id="email"
               placeholder="avc@gmail.com"
+              minlength="5"
               required
             />
+            <span class="error" aria-live="polite"></span>
             <label class="form__label" for="email"></label>
           </div>
           <select class="form__input" name="direct" id="direct" required>
@@ -63,6 +66,7 @@
               Direction 4
             </option>
           </select>
+          <span class="error" aria-live="polite"></span>
           <label class="form__label" for="direct"></label>
           <input
             class="form__input"
@@ -73,6 +77,7 @@
             placeholder="avc.ru"
           />
           <label class="form__label" for="www"></label>
+          <span class="error" aria-live="polite"></span>
           <input
             class="form__input"
             type="text"
@@ -81,6 +86,7 @@
             pattern="^(http://|https://)?vk\.com(/.*)?"
             placeholder="vk.com/shans"
           />
+          <span class="error" aria-live="polite"></span>
           <label class="form__label" for="vk"></label>
           <input
             class="form__input"
@@ -90,6 +96,7 @@
             pattern="^(http://|https://)?ok\.com(/.*)?"
             placeholder="ok.com/shans"
           />
+          <span class="error" aria-live="polite"></span>
           <label class="form__label" for="ok"></label>
           <input
             class="form__input"
@@ -100,6 +107,7 @@
             placeholder="facebook.com/shans"
           />
           <label class="form__label" for="facebook"></label>
+          <span class="error" aria-live="polite"></span>
           <input
             class="form__input"
             type="text"
@@ -108,6 +116,7 @@
             pattern="^(http://|https://)?instagram\.com(/.*)?"
             placeholder="instagram.com/shans"
           />
+          <span class="error" aria-live="polite"></span>
           <label class="form__label" for="instagram"></label>
           <input
             class="form__input"
@@ -117,6 +126,7 @@
             pattern="^(http://|https://)?youtube\.com(/.*)?"
             placeholder="youtube.com/shans"
           />
+          <span class="error" aria-live="polite"></span>
           <label class="form__label" for="youtube"></label>
           <input
             class="form__input"
@@ -127,6 +137,7 @@
             placeholder="Name Lastname"
             required
           />
+          <span class="error" aria-live="polite"></span>
           <label class="form__label" for="manager"></label>
           <div class="form__file">
             <input
@@ -146,6 +157,7 @@
               id="checkbox"
               required
             />
+            <span class="error" aria-live="polite"></span>
             <label class="form__label" for="checkbox"></label>
             <p class="form__text">I agree</p>
           </div>

@@ -437,54 +437,29 @@ body {
     align-items: stretch;
 }
 
-.form__label {
-    position: relative;
-}
-
-.form__input[required]+.form__label::after {
-    content: '*';
-    position: absolute;
-    top: -45px;
-    right: -10px;
-    color: red;
-}
-
+/* Это стили для не валидных полей */
 .form__input:invalid {
-    border: 1px solid red;
+    border-color: #900;
+    background-color: #fdd;
 }
 
-.form__input:invalid+.form__label::before {
-    content: 'invalid value';
-    position: absolute;
-    top: -12px;
-    right: 0;
-    color: red;
+.form__input:focus:invalid {
+    outline: none;
 }
 
-#direct:invalid+.form__label::before {
-    content: 'select value';
-    position: absolute;
-    top: -12px;
-    right: 0;
-    color: red;
+/* Это стили для кастомных сообщений об ошибке */
+.error {
+    width: 100%;
+    padding: 0;
+
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+
+    box-sizing: border-box;
 }
 
-.form__input:invalid:placeholder-shown+.form__label::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: transparent;
-}
-
-.form__input:invalid:placeholder-shown {
-    border: 1px solid rgb(118, 118, 118);
-}
-
-#direct:required:invalid {
-    border: 1px solid rgb(118, 118, 118);
-}
-
-.invalid {
-    border: 1px solid red;
+.error.active {
+    padding: 0.3em;
 }
