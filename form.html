@@ -148,6 +148,7 @@
               accept=".png, .jpg, .jpeg"
             />
             <label class="form__label" for="file">photo</label>
+            <button class="form__btn-del-file">Cancel</button>
           </div>
           <div class="form__checkbox-wrap">
             <input
@@ -162,25 +163,17 @@
           </div>
         </fieldset>
         <footer class="form__footer">
-          <input
-            class="form__input"
-            type="submit"
-            name="submit"
-            id="submit"
-            value="Send"
-          />
-          <label class="form__label" for="submit"></label>
-          <input
-            class="form__input"
-            type="reset"
-            name="reset"
-            id="reset"
-            value="Cansel"
-          />
-          <label class="form__label" for="reset"></label>
+          <button class="form__input" type="submit" name="submit" id="submit">
+            Send
+          </button>
+          <button class="form__input" type="reset" name="reset" id="reset">
+            Cansel
+          </button>
         </footer>
       </form>
     </div>
   </body>
-  <script src="./form.js"></script>
+  <script src="./validation.js"></script>
+  <script src="./send-data.js"></script>
+  <script src="./input-file.js"></script>
 </html>
