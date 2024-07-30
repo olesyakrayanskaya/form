@@ -437,13 +437,29 @@ body {
     align-items: stretch;
 }
 
-/* Это стили для не валидных полей */
-.form__input:invalid {
-    border-color: #900;
-    background-color: #fdd;
+.form__input {
+    display: flex;
+    padding: 20px 24px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 12px;
+    background: #FFF;
 }
 
-.form__input:focus:invalid {
+/* Это стили для не валидных полей */
+.form__input.invalid {
+    border-radius: 12px;
+    border: 1px solid #F53C14;
+    background: #FFF;
+    color: #F53C14;
+}
+
+.form__input.invalid::placeholder {
+    color: #F53C14;
+}
+
+.form__input:focus.invalid {
     outline: none;
 }
 
@@ -451,13 +467,11 @@ body {
 .error {
     width: 100%;
     padding: 0;
-
-    font-size: 80%;
-    color: white;
-    background-color: #900;
-    border-radius: 0 0 5px 5px;
-
-    box-sizing: border-box;
+    color: #F53C14;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
 }
 
 .error.active {

@@ -5,47 +5,76 @@ const form = document.getElementById('form');
 const email = document.getElementById("email");
 const emailError = document.querySelector("#email + span.error");
 
-email.addEventListener("input", function (event) {
-    // Каждый раз, когда пользователь что-то вводит,
-    // мы проверяем, являются ли поля формы валидными
+const chekbox = document.getElementById("checkbox");
+const chekboxError = document.querySelector("#checkbox + span.error");
 
-    if (email.validity.valid) {
-        // Если на момент валидации какое-то сообщение об ошибке уже отображается,
-        // если поле валидно, удаляем сообщение
-        emailError.textContent = ""; // Сбросить содержимое сообщения
-        emailError.className = "error"; // Сбросить визуальное состояние сообщения
+function formValidation(inputEl, inputElError) {
+
+    inputEl.addEventListener("input", function (event) {
+        // Каждый раз, когда пользователь что-то вводит,
+        // мы проверяем, являются ли поля формы валидными
+
+        if (inputEl.validity.valid) {
+            // Если на момент валидации какое-то сообщение об ошибке уже отображается,
+            // если поле валидно, удаляем сообщение
+            inputEl.classList.remove('invalid');
+            inputElError.textContent = ""; // Сбросить содержимое сообщения
+            inputElError.className = "error"; // Сбросить визуальное состояние сообщения
+        } else {
+            // Если поле не валидно, показываем правильную ошибку
+            inputEl.classList.add('invalid');
+            showError(inputEl, inputElError);
+        }
+    });
+
+    form.addEventListener("submit", function (event) {
+        // Если поле email валдно, позволяем форме отправляться
+
+        if (!inputEl.validity.valid) {
+            // Если поле email не валидно, отображаем соответствующее сообщение об ошибке
+            showError(inputEl, inputElError);
+            // Затем предотвращаем стандартное событие отправки формы
+            event.preventDefault();
+        }
+    });
+}
+
+formValidation(email, emailError)
+formValidation(chekbox, chekboxError)
+
+function showError(inputEl, inputElError) {
+    if (inputEl.type === 'checkbox') {
+        if (inputEl.validity.valueMissing) {
+            // Если поле пустое,
+            // отображаем следующее сообщение об ошибке
+            inputElError.innerHTML = `You need to agry`;
+
+        }
     } else {
-        // Если поле не валидно, показываем правильную ошибку
-        showError();
+        if (inputEl.validity.valueMissing) {
+            // Если поле пустое,
+            // отображаем следующее сообщение об ошибке
+            inputElError.innerHTML = `You need to enter an ${inputEl.name}.`;
+        } else if (inputEl.validity.typeMismatch) {
+            // Если поле содержит несоответствующее типу поля значение,
+            // отображаем следующее сообщение об ошибке
+            inputElError.innerHTML = `Entered value needs to be an ${inputEl.name} value.`;
+        } else if (inputEl.validity.tooShort) {
+            // Если содержимое слишком короткое,
+            // отображаем следующее сообщение об ошибке
+            inputElError.innerHTML = `${inputEl.name} value should be at least ${inputEl.minLength} characters; you entered ${inputEl.value.length}.`;
+        }
+        else if (inputEl.validity.tooLong) {
+            // Если содержимое слишком длинное,
+            // отображаем следующее сообщение об ошибке
+            inputElError.innerHTML = `${inputEl.name} value should be no more than ${inputEl.maxLength} characters; you entered ${inputEl.value.length}.`;
+        }
+        else if (inputEl.validity.patternMismatch) {
+            // Если содержимое не соответствует паттерну,
+            // отображаем следующее сообщение об ошибке
+            inputElError.innerHTML = `${inputEl.name} value must match the specified format`;
+        }
     }
-});
-
-form.addEventListener("submit", function (event) {
-    // Если поле email валдно, позволяем форме отправляться
-
-    if (!email.validity.valid) {
-        // Если поле email не валидно, отображаем соответствующее сообщение об ошибке
-        showError();
-        // Затем предотвращаем стандартное событие отправки формы
-        event.preventDefault();
-    }
-});
-
-function showError() {
-    if (email.validity.valueMissing) {
-        // Если поле пустое,
-        // отображаем следующее сообщение об ошибке
-        emailError.textContent = "You need to enter an e-mail address.";
-    } else if (email.validity.typeMismatch) {
-        // Если поле содержит не email-адрес,
-        // отображаем следующее сообщение об ошибке
-        emailError.textContent = "Entered value needs to be an e-mail address.";
-    } else if (email.validity.tooShort) {
-        // Если содержимое слишком короткое,
-        // отображаем следующее сообщение об ошибке
-        emailError.textContent = `Email should be at least ${email.minLength} characters; you entered ${email.value.length}.`;
-    }
-
     // Задаём соответствующую стилизацию
-    emailError.className = "error active";
+    inputElError.className = "error active";
 }
