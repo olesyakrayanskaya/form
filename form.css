@@ -447,7 +447,6 @@ body {
     background: #FFF;
 }
 
-/* Это стили для не валидных полей */
 .form__input.invalid {
     border-radius: 12px;
     border: 1px solid #F53C14;
@@ -463,7 +462,10 @@ body {
     outline: none;
 }
 
-/* Это стили для кастомных сообщений об ошибке */
+.form__checkbox-wrap {
+    position: relative;
+}
+
 .error {
     width: 100%;
     padding: 0;
@@ -476,4 +478,15 @@ body {
 
 .error.active {
     padding: 0.3em;
+}
+
+.form__checkbox-wrap span {
+    position: absolute;
+    bottom: -15px;
+    left: -5px;
+}
+
+.form__footer {
+    display: flex;
+    gap: 24px;
 }
